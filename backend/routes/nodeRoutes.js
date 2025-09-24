@@ -1,23 +1,11 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const router = express.Router();
+const { getAllNotes, addNote, updateNote, deleteNote } = require('../controllers/notesController');
 
-
-router.get("/", (req, res) => {
-    res.status(200).json({ message: 'Get all notes successfully' });
-});
-
-router.post("/", (req, res) => {
-    res.status(201).json({ message: 'Note created successfully' });
-});
-
-router.put("/:id", (req, res) => {
-    res.status(200).json({ message: 'Note updated successfully' });
-});
-
-router.delete("/:id", (req, res) => {
-    res.status(200).json({ message: 'Note deleted successfully' });
-});
-
+router.get("/", getAllNotes);
+router.post("/", addNote);
+router.put("/:id", updateNote);
+router.delete("/:id", deleteNote);
 
 module.exports = router;

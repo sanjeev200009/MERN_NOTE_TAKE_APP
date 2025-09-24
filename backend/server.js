@@ -2,6 +2,7 @@ const express = require('express');
 const dotenv = require('dotenv');
 const mongoose = require('mongoose');
 const notesRoutes = require('./routes/nodeRoutes.js');
+
 dotenv.config();
 const PORT = process.env.PORT || 5000;
 

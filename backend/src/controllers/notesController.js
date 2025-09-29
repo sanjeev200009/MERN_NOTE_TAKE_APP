@@ -3,7 +3,7 @@ const Note = require('../models/Node');
 // Get all notes
 const getAllNotes = async (req, res) => {
     try {
-        const notes = await Note.find();
+        const notes = await Note.find().sort({createdAt: -1});//newest first
         return res.status(200).json({
             success: true,
             message: "Retrieved all notes successfully",
@@ -18,6 +18,31 @@ const getAllNotes = async (req, res) => {
         });
     }
 };
+
+//get a specific Note
+const getNoteById = async (req, res) => {
+    try {
+        const Getnotebyid = await Note.findById(req.params.id);
+        if (!Getnotebyid) {
+            return res.status(404).json({
+                success: false,
+                message: "Note Not Found"
+            })
+        }
+        res.status(200).json({
+            success: true,
+            message: "Retrieved specific notes successfully",
+            data: Getnotebyid
+        });
+
+    }catch (error) {
+        console.error("Error while getting specific notes:", error.message);
+        return res.status(500).json({
+            success: false,
+            message: "Internal Server Error"
+        });
+    }
+}
 
 // Add a note
 const addNote = async (req, res) => {
@@ -96,4 +121,4 @@ const deleteNote = async (req, res) => {
     }
 };
 
-module.exports = { getAllNotes, addNote, updateNote, deleteNote };
+module.exports = { getAllNotes, addNote, updateNote, deleteNote,getNoteById };

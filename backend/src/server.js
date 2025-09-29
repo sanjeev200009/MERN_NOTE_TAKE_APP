@@ -2,6 +2,7 @@ const express = require('express');
 const dotenv = require('dotenv');
 const connectDB = require('./config/db.js');
 const notesRoutes = require('./routes/nodeRoutes.js');
+const { ratelimiter } = require('./middleware/rateLimiter.js');
 
 dotenv.config();
 const PORT = process.env.PORT || 5000;
@@ -10,15 +11,17 @@ const app = express();
 
 // Middleware for JSON parsing
 app.use(express.json());
-
-// Connect to database
-connectDB();
+app.use(ratelimiter);
 
 // Routes
 app.use("/api/notes", notesRoutes);
 
-app.listen(PORT, () => {
-    console.log(`Server is running on port ${PORT}`);
+// Connect to database
+connectDB().then(()=>{
+    app.listen(PORT, () => {
+        console.log(`Server is running on port ${PORT}`);
+    });
 });
+
 
 

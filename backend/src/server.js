@@ -1,5 +1,6 @@
 const express = require('express');
 const dotenv = require('dotenv');
+const cors = require('cors')
 const connectDB = require('./config/db.js');
 const notesRoutes = require('./routes/nodeRoutes.js');
 const { ratelimiter } = require('./middleware/rateLimiter.js');
@@ -9,9 +10,14 @@ const PORT = process.env.PORT || 5000;
 
 const app = express();
 
+app.use(cors({
+    origin: 'http://localhost:5173', 
+}));
+
 // Middleware for JSON parsing
 app.use(express.json());
 app.use(ratelimiter);
+
 
 // Routes
 app.use("/api/notes", notesRoutes);

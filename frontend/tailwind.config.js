@@ -10,8 +10,9 @@ export default {
   },
   plugins: [
     daisyui,
+    require("@tailwindcss/typography"),
   ],
   daisyui: {
-    themes: ["light", "dark", "forest", "sunset"],
+    themes: ["light", "dark", "forest", "sunset","cmyk","dim","lofi","night","coffee","cupcake","synthwave"],
   },
 }

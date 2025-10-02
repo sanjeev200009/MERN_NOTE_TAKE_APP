@@ -16,11 +16,10 @@ app.use(cors({
 
 // Middleware for JSON parsing
 app.use(express.json());
-app.use(ratelimiter);
 
 
 // Routes
-app.use("/api/notes", notesRoutes);
+app.use("/api/notes", ratelimiter, notesRoutes);
 
 // Connect to database
 connectDB().then(()=>{

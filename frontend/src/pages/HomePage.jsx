@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import Navbar from '../components/Navbar'
 import NoteCard from '../components/NoteCard.JSX'
 import RateLimitedUI from '../components/RateLimitedUi'
+import NoteNotFound from '../components/NoteNotFound'
 import instance from '../lib/axios'
 import { toast } from 'react-hot-toast'
 const HomePage = () => {
@@ -38,7 +39,7 @@ const HomePage = () => {
   }, []); 
 
   return (
-    <div>
+    <div className="min-h-screen bg-base-100">
       <Navbar />
       {isRateLimited && <RateLimitedUI />}
 
@@ -53,11 +54,7 @@ const HomePage = () => {
           </div>
         )}
         
-        {!loading && notes.length === 0 && !isRateLimited && (
-          <div className='text-center text-gray-500 py-10'>
-            <p>No notes found. Create your first note!</p>
-          </div>
-        )}
+        {!loading && notes.length === 0 && !isRateLimited && <NoteNotFound />}
       </div>
     </div>
   );

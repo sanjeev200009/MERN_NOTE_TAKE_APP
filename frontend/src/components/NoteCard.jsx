@@ -1,24 +1,38 @@
-import { PenSquare, Trash2 } from 'lucide-react';
-import React from 'react';
-import { Link } from 'react-router-dom';
+import { PenSquare, Trash2 } from "lucide-react";
+import React from "react";
+import { Link } from "react-router-dom";
+import instance from "../lib/axios";
+import { toast } from "react-hot-toast";
+
 
 export const NoteCard = ({ note }) => {
+
+  
+  const deleteNote = async (e, noteId) => {
+    if(!window.confirm("Are you sure to delete this note ")) return;
+    try {
+      await instance.delete(`notes/${noteId}`);
+      // Optionally, you can add a callback to refresh the notes list after deletion
+    } catch (error) {
+      console.error("Error deleting note:", error);
+      // Handle error (e.g., show a toast notification)
+    }
+  };
+
   return (
     <div className="group cursor-pointer">
       <Link
         to={`/note/${note._id}`}
-        className="block bg-gradient-to-br from-slate-800 via-slate-900 to-gray-900 
-          rounded-2xl shadow-xl transition-all duration-300 
-          border border-slate-700/50 overflow-hidden 
-          transform hover:-translate-y-2 hover:scale-[1.02] relative"
+        className="block bg-slate-900 
+            rounded-2xl shadow-xl transition-all duration-300 
+            border border-white overflow-hidden 
+            transform hover:-translate-y-2 hover:scale-[1.02] relative"
       >
-        {/* Top accent with animated gradient */}
-        <div className="h-2 bg-gradient-to-r from-[#00FF9D] via-[#00E6B8] to-[#00D4AA] relative">
-          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent animate-pulse"></div>
+    
+        <div className="h-2 bg-[#0d9b65] relative">
         </div>
 
         <div className="p-6 relative z-10">
-          {/* Title without hover color */}
           <h3 className="text-xl font-bold text-white mb-3 leading-tight">
             {note.title}
           </h3>
@@ -33,10 +47,10 @@ export const NoteCard = ({ note }) => {
             <div className="flex items-center gap-2">
               <div className="w-2 h-2 bg-[#00FF9D] rounded-full animate-pulse"></div>
               <span className="text-xs text-gray-400 font-medium">
-                {new Date(note.createdAt).toLocaleDateString('en-US', {
-                  month: 'short',
-                  day: 'numeric',
-                  year: 'numeric',
+                {new Date(note.createdAt).toLocaleDateString("en-US", {
+                  month: "short",
+                  day: "numeric",
+                  year: "numeric",
                 })}
               </span>
             </div>
@@ -62,7 +76,7 @@ export const NoteCard = ({ note }) => {
                 onClick={(e) => {
                   e.preventDefault();
                   e.stopPropagation();
-                  // Delete functionality here
+                  deleteNote(note._id);
                 }}
               >
                 <Trash2 className="h-4 w-4" />

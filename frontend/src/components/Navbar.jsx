@@ -6,7 +6,7 @@ const Navbar = () => {
   return (
     <div className="navbar bg-base-100 shadow-lg border-b border-base-300">
       <div className="navbar-start">
-        <Link to="/" className="btn btn-ghost normal-case text-xl font-bold text-emerald-600 hover:text-emerald-700">
+        <Link to="/" className="btn btn-ghost normal-case text-xl font-bold text-primary hover:text-primary/80">
           <BookOpen className="w-6 h-6 mr-2" />
           MERN Notes
         </Link>
@@ -15,13 +15,13 @@ const Navbar = () => {
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1 gap-2">
           <li>
-            <Link to="/" className="btn btn-ghost btn-sm hover:bg-emerald-50 hover:text-emerald-700">
+            <Link to="/" className="btn btn-ghost btn-sm hover:bg-primary/10 hover:text-primary">
               <Home className="w-4 h-4 mr-1" />
               Home
             </Link>
           </li>
           <li>
-            <Link to="/notes" className="btn btn-ghost btn-sm hover:bg-emerald-50 hover:text-emerald-700">
+            <Link to="/notes" className="btn btn-ghost btn-sm hover:bg-primary/10 hover:text-primary">
               <FileText className="w-4 h-4 mr-1" />
               All Notes
             </Link>
@@ -30,7 +30,7 @@ const Navbar = () => {
       </div>
       
       <div className="navbar-end">
-        <Link to="/create" className="btn bg-emerald-600 hover:bg-emerald-700 text-white border-none btn-sm gap-2 shadow-md hover:shadow-lg transition-all duration-200">
+        <Link to="/create" className="btn btn-primary btn-sm gap-2 shadow-md hover:shadow-lg transition-all duration-200">
           <Plus className="w-4 h-4" />
           Create Note
         </Link>
@@ -46,13 +46,13 @@ const Navbar = () => {
           </label>
           <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
             <li>
-              <Link to="/" className="flex items-center gap-2 hover:bg-emerald-50 hover:text-emerald-700">
+              <Link to="/" className="flex items-center gap-2 hover:bg-primary/10 hover:text-primary">
                 <Home className="w-4 h-4" />
                 Home
               </Link>
             </li>
             <li>
-              <Link to="/notes" className="flex items-center gap-2 hover:bg-emerald-50 hover:text-emerald-700">
+              <Link to="/notes" className="flex items-center gap-2 hover:bg-primary/10 hover:text-primary">
                 <FileText className="w-4 h-4" />
                 All Notes
               </Link>

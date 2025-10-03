@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import instance from "../lib/axios";
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-hot-toast";
-import RateLimitedUI from "../components/RateLimitedUi";
+import RateLimit from "../components/RateLimit";
 
 const CreatePage = () => {
   const [title, setTitle] = useState("");
@@ -59,11 +59,11 @@ const CreatePage = () => {
                  </Link>
                  
                  {/* Rate Limited Message */}
-               {isRateLimited && <RateLimitedUI />}
+               {isRateLimited && <RateLimit />}
                  
                  {/* Create Note Form */}
                  <div className="bg-gradient-to-br from-base-100 to-base-200 rounded-2xl shadow-xl border border-primary/20 overflow-hidden">
-                   {/* Top accent bar to match NoteCard */}
+                   {/* Top accent bar to match DisNote */}
                    <div className="h-3 bg-gradient-to-r from-primary to-secondary relative">
                      <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-cyan-400 opacity-80"></div>
                    </div>

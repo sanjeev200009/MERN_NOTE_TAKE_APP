@@ -26,8 +26,6 @@
   "env": {
     "NODE_ENV": "production"
   },
-  "installCommand": "npm install && cd frontend && rm -rf node_modules dist .vite && npm install && cd ../backend && npm install",
-  "buildCommand": "cd frontend && npm run build",
-  "cleanUrls": true,
-  "trailingSlash": false
+  "installCommand": "npm install && cd frontend && npm install && cd ../backend && npm install",
+  "buildCommand": "cd frontend && npm run build"
 }

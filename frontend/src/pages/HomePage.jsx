@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import Navbar from '../components/Navbar'
-import NoteCard from '../components/NoteCard'
-import RateLimitedUI from '../components/RateLimitedUI'
+import DisNote from '../components/DisNote'
+import RateLimit from '../components/RateLimit'
 import NoteNotFound from '../components/NoteNotFound'
 import instance from '../lib/axios'
 import { toast } from 'react-hot-toast'
@@ -41,7 +41,7 @@ const HomePage = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-base-100 via-base-200 to-base-100">
       <Navbar />
-      {isRateLimited && <RateLimitedUI />}
+      {isRateLimited && <RateLimit />}
 
       <div className='max-w-7xl mx-auto px-4 py-8 mt-6'>
         {loading && (
@@ -54,7 +54,7 @@ const HomePage = () => {
         {!loading && notes.length > 0 && !isRateLimited && (
           <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-20'>
               {notes.map((note) => (
-                <NoteCard key={note._id} note={note} onDelete={handleDeleteNote} />
+                <DisNote key={note._id} note={note} onDelete={handleDeleteNote} />
               ))}
           </div>
         )}

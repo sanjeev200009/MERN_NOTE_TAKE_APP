@@ -1,6 +1,6 @@
 import { ZapIcon } from "lucide-react";
 
-const RateLimitedUI = () => {
+const RateLimit = () => {
   return (
     <div className="max-w-6xl mx-auto px-4 py-8">
       <div className="bg-primary/10 border border-primary/30 rounded-lg shadow-md">
@@ -23,4 +23,4 @@ const RateLimitedUI = () => {
   );
 };
 
-export default RateLimitedUI;
+export default RateLimit;

@@ -1,4 +1,4 @@
-import {Routes, Route} from "react-router"
+import {Routes, Route} from "react-router-dom"
 import HomePage from "./pages/HomePage"
 import CreatePage from "./pages/CreatePage"
 import NoteDetailPage from "./pages/NoteDetailPage"
@@ -7,7 +7,7 @@ import { Toaster } from "react-hot-toast"
 
 const App = () => {
   return (
-    <div>
+    <div className="min-h-screen bg-base-100">
         <Toaster position="top-center"/>
         <Routes>
             <Route path="/" element={<HomePage/>} />

@@ -4,7 +4,7 @@ This is a demonstration of how MERN stack applications work in the real world. T
 
 ## 🌐 Live Demo
 
-**🚀 Live Application**: [Visit the app on Netlify](https://your-netlify-url.netlify.app)
+**🚀 Live Application**: [Visit the app on Netlify](https://deploy-preview-23--mernnotetakeapp.netlify.app/)
 
 *Features a beautiful Synthwave theme with full CRUD functionality!*
 

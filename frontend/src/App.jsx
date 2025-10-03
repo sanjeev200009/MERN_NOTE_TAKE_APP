@@ -7,7 +7,7 @@ import { Toaster } from "react-hot-toast"
 
 const App = () => {
   return (
-    <div className="min-h-screen bg-base-100" data-theme="synthwave">
+    <div className="min-h-screen bg-base-100">
         <Toaster position="top-center"/>
         <Routes>
             <Route path="/" element={<HomePage/>} />

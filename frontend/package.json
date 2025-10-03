@@ -13,6 +13,7 @@
     "@tailwindcss/typography": "^0.5.19",
     "axios": "^1.12.2",
     "lucide-react": "^0.544.0",
+    "mern_note_take_app": "file:..",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
     "react-hot-toast": "^2.6.0",

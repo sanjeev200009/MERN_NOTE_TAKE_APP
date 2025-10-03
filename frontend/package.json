@@ -10,10 +10,14 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@netlify/functions": "^4.2.7",
     "@tailwindcss/typography": "^0.5.19",
+    "@upstash/ratelimit": "^2.0.6",
+    "@upstash/redis": "^1.35.4",
     "axios": "^1.12.2",
     "lucide-react": "^0.544.0",
     "mern_note_take_app": "file:..",
+    "mongoose": "^8.19.0",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
     "react-hot-toast": "^2.6.0",

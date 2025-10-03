@@ -5,7 +5,7 @@ import instance from "../lib/axios";
 import { toast } from "react-hot-toast";
 
 
-export const NoteCard = ({ note, onDelete }) => {
+export const DisNote = ({ note, onDelete }) => {
   const deleteNote = async (noteId) => {
     if(!window.confirm("Are you sure you want to delete this note?")) return;
     
@@ -104,4 +104,4 @@ export const NoteCard = ({ note, onDelete }) => {
   );
 };
 
-export default NoteCard;
+export default DisNote;

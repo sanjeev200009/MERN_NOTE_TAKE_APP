@@ -15,7 +15,7 @@ const PORT = process.env.PORT || 5000;
 
 // CORS configuration
 const allowedOrigins = process.env.NODE_ENV === "production" 
-  ? ["http://localhost:5000"] 
+  ? ["https://your-app-name.vercel.app", "http://localhost:5000"] 
   : ["http://localhost:5173", "http://localhost:3000"];
 
 app.use(cors({
@@ -40,10 +40,15 @@ if (process.env.NODE_ENV === "production") {
 }
 // Connect to database
 connectDB().then(()=>{
-    app.listen(PORT, () => {
-        console.log(`Server is running on port ${PORT}`);
-    });
+    if (process.env.NODE_ENV !== "production") {
+        app.listen(PORT, () => {
+            console.log(`Server is running on port ${PORT}`);
+        });
+    }
 });
+
+// Export for Vercel serverless functions
+module.exports = app;
 
 
 

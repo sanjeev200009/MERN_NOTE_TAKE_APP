@@ -15,7 +15,7 @@ const PORT = process.env.PORT || 5000;
 
 // CORS configuration
 const allowedOrigins = process.env.NODE_ENV === "production" 
-  ? ["https://your-app-name.vercel.app", "http://localhost:5000"] 
+  ? ["https://mern-note-take-app.vercel.app"] 
   : ["http://localhost:5173", "http://localhost:3000"];
 
 app.use(cors({

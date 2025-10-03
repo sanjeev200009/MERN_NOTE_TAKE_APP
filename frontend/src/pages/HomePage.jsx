@@ -39,12 +39,17 @@ const HomePage = () => {
   }, []); 
 
   return (
-    <div className="min-h-screen bg-base-100">
+    <div className="min-h-screen bg-gradient-to-br from-base-100 via-base-200 to-base-100">
       <Navbar />
       {isRateLimited && <RateLimitedUI />}
 
       <div className='max-w-7xl mx-auto px-4 py-8 mt-6'>
-        {loading && <div className='text-center text-primary py-10'>Loading...</div>}
+        {loading && (
+          <div className='text-center py-10'>
+            <div className="loading loading-spinner loading-lg text-primary"></div>
+            <p className="text-primary mt-4 text-lg">Loading your notes...</p>
+          </div>
+        )}
 
         {!loading && notes.length > 0 && !isRateLimited && (
           <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-20'>

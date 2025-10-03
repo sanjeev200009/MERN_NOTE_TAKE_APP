@@ -50,10 +50,10 @@ const CreatePage = () => {
 
   
   return (
-    <div className="min-h-screen bg-slate-800">
+    <div className="min-h-screen bg-gradient-to-br from-base-100 via-base-200 to-base-100">
       <div className="container mx-auto px-4 py-8">
            <div className="max-w-2xl mx-auto">
-                 <Link to={"/"} className="btn btn-ghost mb-6 text-white hover:text-[#0d9b65] hover:bg-slate-700/50">
+                 <Link to={"/"} className="btn btn-ghost mb-6 text-base-content hover:text-primary hover:bg-primary/20 transition-all duration-300">
                  <ArrowLeftIcon className="size-5" />
                  Back to notes
                  </Link>
@@ -62,12 +62,18 @@ const CreatePage = () => {
                {isRateLimited && <RateLimitedUI />}
                  
                  {/* Create Note Form */}
-                 <div className="bg-slate-900 rounded-2xl shadow-xl border border-white overflow-hidden">
+                 <div className="bg-gradient-to-br from-base-100 to-base-200 rounded-2xl shadow-xl border border-primary/20 overflow-hidden">
                    {/* Top accent bar to match NoteCard */}
-                   <div className="h-2 bg-[#0d9b65] relative"></div>
+                   <div className="h-3 bg-gradient-to-r from-primary to-secondary relative">
+                     <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-cyan-400 opacity-80"></div>
+                   </div>
                    
                    <div className="p-8">
-                     <h2 className="text-2xl font-bold text-white mb-8">Create New Note</h2>
+                     <h2 className="text-3xl font-bold text-base-content mb-8 text-center">
+                       <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+                         Create New Note
+                       </span>
+                     </h2>
                      
                      <form onSubmit={handleSubmit}>
                        {/* Title Input */}

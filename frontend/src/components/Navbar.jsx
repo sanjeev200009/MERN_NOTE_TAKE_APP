@@ -4,24 +4,24 @@ import { Home, FileText, Plus, BookOpen } from 'lucide-react'
 
 const Navbar = () => {
   return (
-    <div className="navbar bg-base-100 shadow-lg border-b border-base-300">
+    <div className="navbar bg-gradient-to-r from-base-100 to-base-200 shadow-xl border-b border-primary/20 backdrop-blur-sm">
       <div className="navbar-start">
-        <Link to="/" className="btn btn-ghost normal-case text-xl font-bold text-primary hover:text-primary/80">
+        <Link to="/" className="btn btn-ghost normal-case text-xl font-bold text-primary hover:text-secondary transition-colors duration-300">
           <BookOpen className="w-6 h-6 mr-2" />
-          MERN Notes
+          Blue Notes
         </Link>
       </div>
       
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1 gap-2">
           <li>
-            <Link to="/" className="btn btn-ghost btn-sm hover:bg-primary/10 hover:text-primary">
+            <Link to="/" className="btn btn-ghost btn-sm hover:bg-primary/20 hover:text-primary transition-all duration-300">
               <Home className="w-4 h-4 mr-1" />
               Home
             </Link>
           </li>
           <li>
-            <Link to="/notes" className="btn btn-ghost btn-sm hover:bg-primary/10 hover:text-primary">
+            <Link to="/notes" className="btn btn-ghost btn-sm hover:bg-primary/20 hover:text-primary transition-all duration-300">
               <FileText className="w-4 h-4 mr-1" />
               All Notes
             </Link>
@@ -30,7 +30,7 @@ const Navbar = () => {
       </div>
       
       <div className="navbar-end">
-        <Link to="/create" className="btn btn-primary btn-sm gap-2 shadow-md hover:shadow-lg transition-all duration-200">
+        <Link to="/create" className="btn btn-primary hover:btn-secondary btn-sm gap-2 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
           <Plus className="w-4 h-4" />
           Create Note
         </Link>
@@ -44,15 +44,15 @@ const Navbar = () => {
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h7"></path>
             </svg>
           </label>
-          <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+          <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow-xl bg-base-100 rounded-box w-52 border border-primary/20">
             <li>
-              <Link to="/" className="flex items-center gap-2 hover:bg-primary/10 hover:text-primary">
+              <Link to="/" className="flex items-center gap-2 hover:bg-primary/20 hover:text-primary transition-all duration-300">
                 <Home className="w-4 h-4" />
                 Home
               </Link>
             </li>
             <li>
-              <Link to="/notes" className="flex items-center gap-2 hover:bg-primary/10 hover:text-primary">
+              <Link to="/notes" className="flex items-center gap-2 hover:bg-primary/20 hover:text-primary transition-all duration-300">
                 <FileText className="w-4 h-4" />
                 All Notes
               </Link>

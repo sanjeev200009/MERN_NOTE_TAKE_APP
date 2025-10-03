@@ -1,5 +1,7 @@
 # MERN Stack Note Taking Application
 
+**🌟 Successfully Deployed on Netlify** | [Live Demo](https://deploy-preview-23--mernnotetakeapp.netlify.app/)
+
 This is a demonstration of how MERN stack applications work in the real world. The project is structured with separate frontend and backend components and is successfully deployed on Netlify.
 
 ## 🌐 Live Demo
@@ -7,6 +9,8 @@ This is a demonstration of how MERN stack applications work in the real world. T
 **🚀 Live Application**: [Visit the app on Netlify](https://deploy-preview-23--mernnotetakeapp.netlify.app/)
 
 *Features a beautiful Synthwave theme with full CRUD functionality!*
+
+> **Note**: This project has migrated from Vercel to Netlify. All Vercel deployments shown are outdated and can be ignored.
 
 ## 📋 Project Overview
 
